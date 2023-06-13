@@ -2,12 +2,14 @@ import { Button, Flex, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+// These props are injected by the shell app.
+// TODO: Publish this type in an npm package so all remotes can reference it (or, even simpler, put remotes and shell in a monorepo)
 type RemoteProps = {
   parentCount: number;
   nav: (url: string) => void;
 };
 
-export default function CounterAppTwo({ nav, parentCount }: RemoteProps) {
+export default function RemoteAppTwo({ nav, parentCount }: RemoteProps) {
   const [count, setCount] = useState(1);
 
   const location = useLocation();
