@@ -2,7 +2,7 @@ import { Button, Flex, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const Counter = () => {
+export default function Counter() {
   const [count, setCount] = useState(1);
 
   const location = useLocation();
@@ -20,6 +20,4 @@ const Counter = () => {
       )}
     </Flex>
   );
-};
-
-export default Counter;
+}
