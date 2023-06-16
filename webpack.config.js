@@ -1,6 +1,9 @@
+const webpack = require("webpack"); // only add this if you don't have yet
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 const deps = require("./package.json").dependencies;
+
+const buildDate = new Date().toLocaleString();
 
 module.exports = {
   entry: "./src/index.ts",
@@ -25,6 +28,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.EnvironmentPlugin({ BUILD_DATE: buildDate }),
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify(process.env),
+    }),
     new ModuleFederationPlugin({
       name: "remote2",
       filename: "remoteEntry.js",
