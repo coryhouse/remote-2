@@ -8,10 +8,11 @@ var buildDate = process.env.BUILD_DATE;
 // TODO: Publish this type in an npm package so all remotes can reference it (or, even simpler, put remotes and shell in a monorepo)
 type RemoteProps = {
   parentCount: number;
-  nav: (url: string) => void;
+  urls: Record<"about" | "home", string>;
+  user: { id: number; name: string };
 };
 
-export default function RemoteTwo({ nav, parentCount }: RemoteProps) {
+export default function RemoteTwo({ urls, user, parentCount }: RemoteProps) {
   const [count, setCount] = useState(1);
 
   const location = useLocation();
@@ -19,11 +20,13 @@ export default function RemoteTwo({ nav, parentCount }: RemoteProps) {
   return (
     <Flex color="#000" gap="1rem" direction="column">
       <p>Build date: {buildDate}</p>
+      <p>Hi {user.name}</p>
       <Text>Click count : {count} </Text>
-      <Text>Parent count: {parentCount} </Text>
+      <Text>Shell count: {parentCount} </Text>
       <Button onClick={() => setCount((prevState) => prevState + 1)}>
-        Click me
+        Increment local count
       </Button>
+      <Link to={urls.about}>About</Link>
       {location.pathname !== "/" && (
         <Button as={Link} to="/">
           Back to shell
