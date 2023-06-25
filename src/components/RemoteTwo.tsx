@@ -29,13 +29,8 @@ export default function RemoteTwo({
       <nav>
         <ul>
           <li>
-            <Link to={urls.about}>About</Link>
+            <Link to="">Home</Link>
           </li>
-          {location.pathname !== "/" && (
-            <li>
-              <Link to="/">Back to shell</Link>
-            </li>
-          )}
           <li>
             <Link style={{ color: "blue" }} to={baseUrl + "/page1"}>
               Remote page 1
@@ -46,6 +41,14 @@ export default function RemoteTwo({
               Remote page 2
             </Link>
           </li>
+          <li>
+            <Link to={urls.about}>About</Link>
+          </li>
+          {location.pathname !== "/" && (
+            <li>
+              <Link to="/">Back to shell</Link>
+            </li>
+          )}
         </ul>
       </nav>
 
@@ -58,9 +61,9 @@ export default function RemoteTwo({
       </button>
 
       <Routes>
-        <Route path="/" element={<h1>Remote 2 home page</h1>} />
-        <Route path="page1" element={<h1>Remote page 1</h1>} />
-        <Route path="page2" element={<h1>Remote page 2</h1>} />
+        <Route path="/" element={<h2>Remote 2 home page</h2>} />
+        <Route path="page1" element={<h2>Remote page 1</h2>} />
+        <Route path="page2" element={<h2>Remote page 2</h2>} />
         <Route path="*" element={<h1>404 - Remote 1 Page Not Found</h1>} />
       </Routes>
     </>
