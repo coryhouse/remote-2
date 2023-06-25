@@ -10,8 +10,11 @@ module.exports = {
   entry: "./src/index.ts",
   mode: "development",
   output: {
-    // Required for the historyApiFallback setting to work per https://ui.dev/react-router-cannot-get-url-refresh#webpack--development
-    publicPath: `http://localhost:${devPort}/`,
+    publicPath:
+      process.env.production === "true"
+        ? undefined
+        : // Required for the historyApiFallback setting to work per https://ui.dev/react-router-cannot-get-url-refresh#webpack--development
+          `http://localhost:${devPort}/`,
   },
   devServer: {
     port: devPort,

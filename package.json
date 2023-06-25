@@ -6,6 +6,7 @@
     "@types/node": "^15.0.3",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
+    "cross-env": "^7.0.3",
     "html-webpack-plugin": "5.3.1 ",
     "serve": "14.2.0",
     "surge": "^0.23.1",
@@ -17,7 +18,7 @@
   },
   "scripts": {
     "start": "webpack serve",
-    "build": "webpack --mode production && cd dist && cp index.html 200.html",
+    "build": "cross-env production=true webpack --mode production && cd dist && cp index.html 200.html",
     "serve": "serve dist -p 3002 -s",
     "clean": "rm -rf dist",
     "deploy": "cd dist && surge --domain grey-whip.surge.sh"
