@@ -25,18 +25,17 @@ export default function RemoteTwo({
   return (
     <>
       <h2>Remote 2</h2>
-      <p>Build date: {buildDate}</p>
-      <p>Hi {user.name}</p>
-      <p>Local count: {count} </p>
-      <p>Shell count: {parentCount} </p>
-      <button onClick={() => setCount((prevState) => prevState + 1)}>
-        Increment local count
-      </button>
-      <Link to={urls.about}>About</Link>
-      {location.pathname !== "/" && <Link to="/">Back to shell</Link>}
 
       <nav>
         <ul>
+          <li>
+            <Link to={urls.about}>About</Link>
+          </li>
+          {location.pathname !== "/" && (
+            <li>
+              <Link to="/">Back to shell</Link>
+            </li>
+          )}
           <li>
             <Link style={{ color: "blue" }} to={baseUrl + "/page1"}>
               Remote page 1
@@ -50,11 +49,19 @@ export default function RemoteTwo({
         </ul>
       </nav>
 
+      <p>Build date: {buildDate}</p>
+      <p>Hi {user.name}</p>
+      <p>Local count: {count} </p>
+      <p>Shell count: {parentCount} </p>
+      <button onClick={() => setCount((prevState) => prevState + 1)}>
+        Increment local count
+      </button>
+
       <Routes>
-        <Route path="/" element={<h1>Remote 1 home page</h1>} />
+        <Route path="/" element={<h1>Remote 2 home page</h1>} />
         <Route path="page1" element={<h1>Remote page 1</h1>} />
         <Route path="page2" element={<h1>Remote page 2</h1>} />
-        <Route path="*" element={<h1>404 - Remote 1 page Not Found</h1>} />
+        <Route path="*" element={<h1>404 - Remote 1 Page Not Found</h1>} />
       </Routes>
     </>
   );
