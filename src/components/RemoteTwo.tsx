@@ -57,7 +57,7 @@ export default function RemoteTwo({
       </button>
 
       <Routes>
-        <Route path="/" element={<h2>Remote 2 home page</h2>} />
+        <Route path="/" element={<h2>Remote 2 home</h2>} />
         <Route path="page1" element={<h2>Remote 2 page 1</h2>} />
         <Route path="page2" element={<h2>Remote 2 page 2</h2>} />
         <Route path="*" element={<h2>404 - Remote 2 Page Not Found</h2>} />
