@@ -18,7 +18,7 @@ export default function RemoteTwo({
   user,
   parentCount,
 }: RemoteProps) {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
 
   const location = useLocation();
 
