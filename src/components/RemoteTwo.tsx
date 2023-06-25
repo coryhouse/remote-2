@@ -32,14 +32,10 @@ export default function RemoteTwo({
             <Link to="">Home</Link>
           </li>
           <li>
-            <Link style={{ color: "blue" }} to={baseUrl + "/page1"}>
-              Remote page 1
-            </Link>
+            <Link to={baseUrl + "/page1"}>Remote page 1</Link>
           </li>
           <li>
-            <Link style={{ color: "blue" }} to={baseUrl + "/page2"}>
-              Remote page 2
-            </Link>
+            <Link to={baseUrl + "/page2"}>Remote page 2</Link>
           </li>
           <li>
             <Link to={urls.about}>About</Link>
