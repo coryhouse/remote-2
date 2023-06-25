@@ -1,4 +1,3 @@
-import { Button, Flex, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 
@@ -24,21 +23,17 @@ export default function RemoteTwo({
   const location = useLocation();
 
   return (
-    <Flex color="#000" gap="1rem" direction="column">
+    <>
       <h2>Remote 2</h2>
       <p>Build date: {buildDate}</p>
       <p>Hi {user.name}</p>
-      <Text>Click count : {count} </Text>
-      <Text>Shell count: {parentCount} </Text>
-      <Button onClick={() => setCount((prevState) => prevState + 1)}>
+      <p>Local count: {count} </p>
+      <p>Shell count: {parentCount} </p>
+      <button onClick={() => setCount((prevState) => prevState + 1)}>
         Increment local count
-      </Button>
+      </button>
       <Link to={urls.about}>About</Link>
-      {location.pathname !== "/" && (
-        <Button as={Link} to="/">
-          Back to shell
-        </Button>
-      )}
+      {location.pathname !== "/" && <Link to="/">Back to shell</Link>}
 
       <nav>
         <ul>
@@ -61,6 +56,6 @@ export default function RemoteTwo({
         <Route path="page2" element={<h1>Remote page 2</h1>} />
         <Route path="*" element={<h1>404 - Remote 1 page Not Found</h1>} />
       </Routes>
-    </Flex>
+    </>
   );
 }
