@@ -4,13 +4,20 @@ const { ModuleFederationPlugin } = require("webpack").container;
 const deps = require("./package.json").dependencies;
 
 const buildDate = new Date().toLocaleString();
+const devPort = 3002;
 
 module.exports = {
   entry: "./src/index.ts",
   mode: "development",
+  output: {
+    // Required for the historyApiFallback setting to work per https://ui.dev/react-router-cannot-get-url-refresh#webpack--development
+    publicPath: `http://localhost:${devPort}/`,
+  },
   devServer: {
-    port: 3002,
+    port: devPort,
     open: true,
+    // Redirect all requests to index.html so client-side routing works
+    historyApiFallback: true,
     headers: {
       "Access-Control-Allow-Origin": "*",
     },

@@ -7,6 +7,7 @@ export default function App() {
       <Box>REMOTE-2</Box>
       <Box>
         <RemoteTwo
+          baseUrl=""
           parentCount={0}
           user={{ id: 2, name: "Bobby" }}
           urls={{ about: "/about", home: "/" }}
