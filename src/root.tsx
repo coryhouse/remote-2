@@ -10,6 +10,7 @@ createRoot(document.getElementById("root") as HTMLElement).render(
     <RemoteTwo
       baseUrl=""
       parentCount={0}
+      account="fake-account"
       user={{ id: 2, name: "Bobby" }}
       urls={{ about: "/about", home: "/" }}
     />
