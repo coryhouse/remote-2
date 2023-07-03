@@ -24,6 +24,8 @@ export default function RemoteTwo({
 
   const location = useLocation();
 
+  if (parentCount > 2) throw new Error("Shell count is greater than 2.");
+
   return (
     <>
       <h2>Remote 2</h2>
