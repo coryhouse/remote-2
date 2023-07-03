@@ -7,7 +7,7 @@ var buildDate = process.env.BUILD_DATE;
 // TODO: Publish this type in an npm package so all remotes can reference it (or, even simpler, put remotes and shell in a monorepo)
 type RemoteProps = {
   baseUrl: string;
-  parentCount: number;
+  shellCount: number;
   account: string;
   urls: Record<"about" | "home", string>;
   user: { id: number; name: string };
@@ -17,14 +17,14 @@ export default function RemoteTwo({
   baseUrl,
   urls,
   user,
-  parentCount,
+  shellCount,
   account,
 }: RemoteProps) {
   const [count, setCount] = useState(0);
 
   const location = useLocation();
 
-  if (parentCount > 2) throw new Error("Shell count is greater than 2.");
+  if (shellCount > 2) throw new Error("Shell count is greater than 2.");
 
   return (
     <>
@@ -56,7 +56,7 @@ export default function RemoteTwo({
       <p>Hi {user.name}</p>
       <p>Account: {account}</p>
       <p>Local count: {count} </p>
-      <p>Shell count: {parentCount} </p>
+      <p>Shell count: {shellCount} </p>
       <button onClick={() => setCount((prevState) => prevState + 1)}>
         Increment local count
       </button>
