@@ -59,6 +59,11 @@ export default function RemoteTwo({
         Increment local count
       </button>
 
+      <p>
+        This remote throws an error and falls back to the remote's Error
+        boundary when the parent count is greater than 2.
+      </p>
+
       <Routes>
         <Route path="/" element={<h2>Remote 2 home</h2>} />
         <Route path="page1" element={<h2>Remote 2 page 1</h2>} />
