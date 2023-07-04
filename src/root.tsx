@@ -3,7 +3,7 @@ import RemoteTwo from "./RemoteTwo";
 import { ShellContext } from "./ShellContext";
 
 // This root is used for running the remote by itself.
-// The shell wraps all remotes in a BrowserRouter, so we must do the same here.
+// The shell provides a context, so we wrap our remote in the shell's context to run it alone.
 // The shell also passes props to the remotes, so we must do the same here.
 createRoot(document.getElementById("root") as HTMLElement).render(
   <ShellContext>
