@@ -63,7 +63,7 @@ export default function RemoteTwo({
 
       <p>
         This remote throws an error and falls back to the remote's Error
-        boundary when the parent count is greater than 2.
+        boundary when the shell count is greater than 2.
       </p>
 
       <Routes>
