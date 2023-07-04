@@ -24,8 +24,9 @@ export default function RemoteTwo({
 
   const location = useLocation();
 
-  if (shellCount > 2) throw new Error("Shell count is greater than 2.");
+  if (count > 2) throw new Error("Count is greater than 2.");
 
+  // Unlike remote-1, this remote has its own ErrorBoundary so it can display custom error UI.
   return (
     <>
       <h2>Remote 2</h2>
@@ -62,8 +63,8 @@ export default function RemoteTwo({
       </button>
 
       <p>
-        This remote throws an error and falls back to the remote's Error
-        boundary when the shell count is greater than 2.
+        This remote throws an error and falls back to its own custom boundary
+        when the local count is greater than 2.
       </p>
 
       <Routes>
