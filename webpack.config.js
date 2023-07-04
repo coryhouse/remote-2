@@ -48,7 +48,7 @@ module.exports = (env, argv) => {
         filename: "remoteEntry.js",
         exposes: {
           // expose each component
-          "./RemoteTwo": "./src/RemoteTwo",
+          "./RemoteTwo": "./src/RemoteTwoBoundary",
         },
         shared: {
           ...deps,
