@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: remote-2
+  name: remote-2
+  namespace: client-webapps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: remote-2
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: remote-2
+    spec:
+      containers:
+        - image: n4acr.azurecr.io/dev/remote-2:latest
+          name: shell
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: remote-2-svc
+  namespace: client-webapps
+spec:
+  selector:
+    app.kubernetes.io/name: remote-2
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: remote-2
