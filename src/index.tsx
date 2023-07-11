@@ -1,5 +1,4 @@
 import { createRoot } from "react-dom/client";
-import RemoteTwo from "./RemoteTwo";
 import { ShellContext } from "./ShellContext";
 import RemoteTwoBoundary from "./RemoteTwoBoundary";
 
