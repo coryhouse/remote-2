@@ -2,6 +2,13 @@
   "name": "app2",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack --mode production && cd dist && cp index.html 200.html",
+    "serve": "serve dist -p 3002 -s",
+    "clean": "rm -rf dist",
+    "deploy": "npm run build && cd dist && surge --domain grey-whip.surge.sh"
+  },
   "devDependencies": {
     "@types/node": "^15.0.3",
     "@types/react": "^18.0.20",
@@ -15,13 +22,6 @@
     "webpack": "^5.67.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.3"
-  },
-  "scripts": {
-    "start": "webpack serve",
-    "build": "webpack --mode production && cd dist && cp index.html 200.html",
-    "serve": "serve dist -p 3002 -s",
-    "clean": "rm -rf dist",
-    "deploy": "npm run build && cd dist && surge --domain grey-whip.surge.sh"
   },
   "dependencies": {
     "react": "^18.2.0",
