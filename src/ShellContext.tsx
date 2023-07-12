@@ -2,10 +2,10 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 
-type RemoteProps = {
+type ShellContextProps = {
   children: React.ReactNode;
 };
 
-export function ShellContext({ children }: RemoteProps) {
+export function ShellContext({ children }: ShellContextProps) {
   return <BrowserRouter>{children}</BrowserRouter>;
 }
