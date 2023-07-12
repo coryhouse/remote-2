@@ -9,6 +9,7 @@ createRoot(document.getElementById("root") as HTMLElement).render(
   <ShellContext>
     <RemoteTwoBoundary
       baseUrl=""
+      language="en"
       shellCount={0}
       account="fake-account"
       user={{ id: 2, name: "Bobby" }}

@@ -8,6 +8,7 @@ type RemoteTwoBoundaryProps = {
   account: string;
   urls: Record<"about" | "home", string>;
   user: { id: number; name: string };
+  language: string;
 };
 
 export default function RemoteTwoBoundary(props: RemoteTwoBoundaryProps) {

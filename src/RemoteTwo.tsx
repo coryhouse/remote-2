@@ -11,6 +11,7 @@ type RemoteProps = {
   account: string;
   urls: Record<"about" | "home", string>;
   user: { id: number; name: string };
+  language: string;
 };
 
 export default function RemoteTwo({
@@ -19,6 +20,7 @@ export default function RemoteTwo({
   user,
   shellCount,
   account,
+  language,
 }: RemoteProps) {
   const [count, setCount] = useState(0);
 
@@ -55,6 +57,7 @@ export default function RemoteTwo({
 
       <p>Build date: {buildDate}</p>
       <p>Hi {user.name}</p>
+      <p>Language: {language}</p>
       <p>Account: {account}</p>
       <p>Local count: {count} </p>
       <p>Shell count: {shellCount} </p>
